@@ -1,4 +1,39 @@
 # Το αρχείο Turtle του λεξιλογίου RDFS που περιγράφει
 # τις κλάσεις και τις ιδιότητες του ωρολογίου προγράμματος.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uni: <http://dilab77.ionio.gr/swp/c17aimer/vocab#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+
+uni:Καθηγητής rdf:type rdfs:Class .
+uni:Διάλεξη rdf:type  rdfs:Class .
+uni:Αίθουσα rdf:type rdfs:Class .
+uni:Μάθημα rdf:type rdfs:Class .
+
+uni:Καθηγητήs rdfs:SubclassOf foaf:Person .
+
+uni:Διδάσκει rdf:type rdfs:Property .
+uni:Διδάσκει rdfs:Range uni:Καθηγητής .
+uni:Διδάσκει rdfs:Domain uni:Διάλεξη .
+uni:Διδάσκει rdfs:Range xsd:String .
+
+uni:Αίθουσα  rdf:type rdfs:Property .
+uni:Αίθουσα rdfs:Range uni:Αίθουσα .
+uni:Αίθουσα rdfs:Domain uni:Διάλεξη .
+uni:Αίθουσα rdfs:Range xsd:String .
+
+uni:την rdf:type rdfs:Property .
+uni:την rdfs:Domain uni:Διάλεξη .
+uni:την rdfs:Range xsd:String .
+
+uni:αρχιζει_στις  rdf:type rdfs:Property .
+uni:αρχιζει_στις  rdfs:Domain uni:Διάλεξη .
+uni:αρχιζει_στις rdfs:Range xsd:Time .
+
+uni:τελειωνει_στις rdf:type rdfs:Property .
+uni:τελειωνει_στις rdfs:Domain uni:Διάλεξη .
+uni:τελειωνει_στις rdfs:Range xsd:Time .
 
 
